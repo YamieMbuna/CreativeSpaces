@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Get a Quote | Creative Spaces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="Assets\main.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+            <img src="Assets/Images/CS-nobg.png" alt="Creative Spaces Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="entertainment.html">Entertainment</a></li>
+                    <li class="nav-item"><a href="tech.html">Tech</a></li>
+                    <li class="nav-item"><a href="about.html">About & Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="active">Contact</a></li>
+                    <li class="nav-item"><a href="legal.html">Legal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="section hero-section" style="padding-top: 5rem; padding-bottom: 3rem; text-align: center;">
+        <h1 class="text-glow" style="font-size: 3rem;">
+            Let's Start Your Revolution
+        </h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto 2rem;">
+            Tell us about your project, whether it's a single service or a complete integrated solution. We're here to build, distribute, and empower.
+        </p>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-card);">
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+            
+            <div class="form-container">
+                <h2 style="text-align: left; margin-bottom: var(--spacing-md); color: var(--color-text-light);">
+                    Request a Custom Quote
+                </h2>
+                <form action="#" method="POST" style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                    
+                    <div class="form-group">
+                        <label for="name" style="display: block; margin-bottom: 5px; color: var(--color-primary-accent);">Full Name</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; background-color: var(--color-bg-dark); border: 1px solid var(--color-bg-card); color: var(--color-text-light); border-radius: 4px;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" style="display: block; margin-bottom: 5px; color: var(--color-primary-accent);">Email Address</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; background-color: var(--color-bg-dark); border: 1px solid var(--color-bg-card); color: var(--color-text-light); border-radius: 4px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service" style="display: block; margin-bottom: 5px; color: var(--color-primary-accent);">Type of Service Needed</label>
+                        <select id="service" name="service" required style="width: 100%; padding: 10px; background-color: var(--color-bg-dark); border: 1px solid var(--color-bg-card); color: var(--color-text-light); border-radius: 4px;">
+                            <option value="">-- Please Select --</option>
+                            <option value="pamodzi">Integrated Pamodzi Package (Tech + Creative)</option>
+                            <optgroup label="Entertainment Division">
+                                <option value="studio">Creative Studios (Music/Video/Photo)</option>
+                                <option value="distribution">Zakwathu Distribution</option>
+                                <option value="events">Creative Events (Hybrid/VR)</option>
+                            </optgroup>
+                            <optgroup label="Tech Division">
+                                <option value="chatbot">AI Chatbot (Creative Chats)</option>
+                                <option value="webdev">Web/Software/App Development</option>
+                                <option value="immersive">Immersive Tech (VR/AR)</option>
+                                <option value="marketing">Digital Marketing/SEO</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" style="display: block; margin-bottom: 5px; color: var(--color-primary-accent);">Project Details / Message</label>
+                        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; background-color: var(--color-bg-dark); border: 1px solid var(--color-bg-card); color: var(--color-text-light); border-radius: 4px; resize: vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="margin-top: var(--spacing-sm);">
+                        Send Inquiry <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="details-container">
+                <div class="card" style="margin-bottom: var(--spacing-md);">
+                    <h3 class="text-glow" style="color: var(--color-text-light); border-bottom: 2px solid var(--color-secondary-accent); padding-bottom: 10px; margin-bottom: 15px;">
+                        Corporate Consultation
+                    </h3>
+                    <p style="margin-bottom: 15px;">
+                        For **Banks, NGOs, and Large Corporates** interested in the **Pamodzi Package** or long-term SLAs.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        <i class="fas fa-building" style="color: var(--color-primary-accent); margin-right: 10px;"></i>
+                        Book a meeting directly with our Executive Team.
+                    </p>
+                    <a href="#" class="cta-button btn-outline" style="width: 100%; text-align: center;">
+                        Book Consultation
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--color-primary-accent); margin-bottom: 15px;">
+                        Direct Contact
+                    </h3>
+                    <p style="margin-bottom: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--color-primary-accent); margin-right: 10px;"></i>
+                        Lilongwe, Malawi (Head Office)
+                    </p>
+                    <p style="margin-bottom: 10px;">
+                        <i class="fas fa-envelope" style="color: var(--color-primary-accent); margin-right: 10px;"></i>
+                        info@creativespaces.mw
+                    </p>
+                    <p style="margin-bottom: 10px;">
+                        <i class="fab fa-whatsapp" style="color: var(--color-primary-accent); margin-right: 10px;"></i>
+                        +265 XXX XXX XXXX
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section" style="padding: var(--spacing-md); text-align: center; border-top: 1px solid var(--color-bg-card);">
+        <p>&copy; 2024 Creative Spaces. Igniting Malawi's Digital & Creative Revolution.</p>
+        <div style="margin-top: var(--spacing-sm);">
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const navList = document.querySelector('.nav-list');
+            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+            if (navList.style.display === 'flex') {
+                navList.style.flexDirection = 'column';
+                navList.style.backgroundColor = 'var(--color-bg-dark)';
+                navList.style.position = 'absolute';
+                navList.style.top = '60px';
+                navList.style.left = '0';
+                navList.style.width = '100%';
+                navList.style.padding = '10px 0';
+            }
+        });
+    </script>
+
+</body>
+</html>

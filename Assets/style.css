@@ -1,0 +1,282 @@
+/* --- 1. Global Variables --- */
+:root {
+    /* Color Palette */
+    --color-primary-accent: #00A3FF;      /* Electric Blue (for CTAs, icons) */
+    --color-secondary-accent: #005C8A;    /* Deeper Blue */
+    --color-bg-dark: #0A0A0A;             /* Deep Charcoal/Black */
+    --color-bg-card: #1A1A1A;             /* Slightly lighter card background */
+    --color-text-light: #FFFFFF;          /* Bright White */
+    --color-text-muted: #CCCCCC;          /* Light Grey for subtext */
+    
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif; /* Recommended clean, modern font */
+    --font-secondary: 'Rajdhani', monospace; /* Recommended techy font for headlines */
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+/* --- 2. Base Reset & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    color: var(--color-primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text-light); /* Reverse on hover */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary-accent);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+/* --- 3. Aesthetic & Utility --- */
+
+/* Text Effect: Glowing Blue for key headers */
+.text-glow {
+    text-shadow: 
+        0 0 5px var(--color-primary-accent), 
+        0 0 10px rgba(0, 163, 255, 0.5); 
+}
+
+/* Reusable CTA Button Style */
+.cta-button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary-accent);
+    color: var(--color-bg-dark);
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 163, 255, 0.5); /* Initial glow */
+}
+
+.cta-button:hover {
+    background-color: var(--color-text-light);
+    box-shadow: 0 0 15px var(--color-primary-accent); 
+    transform: translateY(-2px);
+}
+
+/* Secondary Button (Outline Style) */
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary-accent);
+    border: 2px solid var(--color-primary-accent);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary-accent);
+    color: var(--color-bg-dark);
+    box-shadow: 0 0 15px var(--color-primary-accent);
+}
+
+/* Section Containers */
+.section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    position: relative; /* Context for absolute circuit overlays */
+}
+
+/* Card Container for Services */
+.card {
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border-left: 3px solid var(--color-primary-accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 163, 255, 0.15);
+}
+
+/* Subtle Circuit Overlay Background (Conceptual) */
+/* This requires a base64 image or SVG of a circuit pattern, repeated subtly */
+.circuit-bg {
+    background-image: url('data:image/svg+xml;utf8,<svg ...>'); /* Replace with actual SVG or texture */
+    background-repeat: repeat;
+    background-size: 400px;
+    opacity: 0.03; /* Very faint */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* --- 4. Navigation (Header/Navbar) --- */
+.header {
+    background-color: var(--color-bg-dark);
+    border-bottom: 1px solid var(--color-bg-card);
+    padding: var(--spacing-sm) var(--spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-text-light);
+    /* For the actual logo image */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-item a {
+    color: var(--color-text-muted);
+    padding: 0.5rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-item a:hover,
+.nav-item a.active {
+    color: var(--color-primary-accent);
+    border-bottom: 2px solid var(--color-primary-accent);
+}
+
+/* Mobile Nav Toggle (Hidden by default) */
+.menu-toggle {
+    display: none;
+}
+
+/* Media Query for Desktop: Ensure full navigation display */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide nav on mobile; will be toggled by JS */
+    }
+    
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: var(--color-primary-accent);
+        font-size: 1.5rem;
+    }
+}
+/* --- 5. Mobile Integration Styles (Added for JS Support) --- */
+
+/* Mobile Nav Toggle Icon Styling */
+.menu-toggle i {
+    transition: transform 0.3s ease;
+}
+
+/* Base state for the mobile menu list */
+@media (max-width: 768px) {
+    /* Ensure the toggle is visible */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Set the list to absolute positioning, off-screen by default */
+    .nav-list {
+        display: flex; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position right below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg-dark); /* Solid background for overlay */
+        border-top: 1px solid var(--color-bg-card);
+        padding: 0;
+        transform: translateX(-100%); /* Hides the menu completely off-screen */
+        transition: transform 0.4s ease-in-out;
+        z-index: 90; 
+    }
+
+    /* Styles when the menu is active/open (JS applies the 'open' class) */
+    .nav-list.open {
+        transform: translateX(0); /* Slides the menu into view */
+    }
+    
+    /* Ensure individual links are centered and padded */
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--color-bg-card);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-item a {
+        display: block;
+        padding: 1rem 0; /* Vertical padding for better touch targets */
+    }
+}
+
+/* Optional: Header Scrolled State (for subtle design change on scroll) */
+.header.scrolled {
+    background-color: rgba(10, 10, 10, 0.95); /* Slightly transparent for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/* --- 6. New Logo Image Styling (Add to style.css) --- */
+
+.logo-link {
+    /* Ensure the link container allows the image to be vertically aligned */
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    /* Set the maximum height for the logo image */
+    height: 40px; 
+    width: auto;
+    
+    /* Apply a subtle drop shadow/glow effect to match the blue theme */
+    filter: drop-shadow(0 0 5px rgba(0, 163, 255, 0.6));
+    transition: filter 0.3s ease;
+}
+
+/* Optional: Hide the old text-based logo styling if the user didn't remove the span */
+.logo-link .text-glow {
+    display: none;
+}
