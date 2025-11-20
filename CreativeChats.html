@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Updates | Creative Spaces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="Assets\main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+            <img src="Assets/Images/CS-nobg.png" alt="Creative Spaces Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="products.html">Products</a></li>
+                    <li class="nav-item"><a href="entertainment.html">Entertainment</a></li>
+                    <li class="nav-item"><a href="tech.html">Tech</a></li>
+                    <li class="nav-item"><a href="about.html" class="active">About & Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" >Contact</a></li>
+                    <li class="nav-item"><a href="legal.html">Legal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <section class="section" id="blog">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <h2 style="text-align: center;"><i class="fas fa-bullhorn" style="color: var(--color-primary-accent); margin-right: 10px;"></i> Latest Updates & Creative Work</h2>
+            <p style="text-align: center; margin-bottom: var(--spacing-lg);">
+                Stay up-to-date with our client projects, new partnerships, and announcements from the Tech and Entertainment divisions.
+            </p>
+            
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md);">
+                
+                <article class="card blog-post" style="border-left: 3px solid var(--color-primary-accent);">
+                    <h3 style="color: var(--color-text-light); margin-bottom: 10px;">Meet Our Team</h3>
+                    <p class="post-meta" style="font-size: 0.8rem; color: var(--color-primary-accent); margin-bottom: 10px;"><i class="fas fa-calendar-alt"></i> The Space </p>
+                    <p>welcome to Creative Spaces</p>
+                    <a href="#" class="btn-outline" style="margin-top: 15px; display: inline-block;">Read More</a>
+                </article>
+
+                <article class="card blog-post" style="border-left: 3px solid var(--color-primary-accent);">
+                    <a href="Assets/Creative spaces/Pdf/What is A ChatBot.pdf" download="what is a chatbot" style="text-decoration: none; color: inherit;">
+                    <h3 style="color: var(--color-text-light); margin-bottom: 10px;">
+                        Creative Chats
+                    </h3>
+                    </a>
+                    <p class="post-meta" style="font-size: 0.8rem; color: var(--color-primary-accent); margin-bottom: 10px;"><i class="fas fa-calendar-alt"></i> Date | Tech</p>
+                    <p>Our AI-powered bilingual chatbots are now live, handling you queries and keeping track of all things Malawian</p>
+                    <a href="CreativeChats.html" class="btn-outline" style="margin-top: 15px; display: inline-block;">Read More</a>
+                </article>  
+            </div>
+        </div>
+    </section>
+    
+    <footer class="section" style="padding: var(--spacing-md); text-align: center; border-top: 1px solid var(--color-bg-card);">
+        <p>&copy; 2025 Creative Spaces. Igniting Malawi's Digital & Creative Revolution.</p>
+        <div style="margin-top: var(--spacing-sm);">
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const navList = document.querySelector('.nav-list');
+            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+            if (navList.style.display === 'flex') {
+                navList.style.flexDirection = 'column';
+                navList.style.backgroundColor = 'var(--color-bg-dark)';
+                navList.style.position = 'absolute';
+                navList.style.top = '60px';
+                navList.style.left = '0';
+                navList.style.width = '100%';
+                navList.style.padding = '10px 0';
+            }
+        });
+    </script>
+</body>
+</html>
